@@ -1,0 +1,16 @@
+# Node.js dependencies
+node_modules/
+
+# Environment variables
+.env
+
+# Logs
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Optional: If you have a build folder (e.g., React build)
+build/
+
+# Optional: If you're using a package-lock
+package-lock.json
