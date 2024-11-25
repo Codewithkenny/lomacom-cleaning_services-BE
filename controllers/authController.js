@@ -28,7 +28,12 @@ const registerUser = async (req, res) => {
 
     res.status(201).json({
       message: 'User registered successfully',
-      token,  // Send the token back to the client
+      token,
+      user: {  
+        id: user._id,
+        name: user.username,  
+        email: user.email, 
+      } // Return the 'user' object that was just created
     });
   } catch (err) {
     res.status(500).json({ message: 'Server error' });
@@ -61,11 +66,18 @@ const loginUser = async (req, res) => {
 
     res.status(200).json({
       message: 'Login successful',
-      token,  // Send the token back to the client
+      token: token,
+      user: {  
+        id: user._id,
+        name: user.username,  
+        email: user.email, 
+      }
     });
   } catch (err) {
     res.status(500).json({ message: 'Server error' });
   }
 };
+
+
 
 module.exports = { registerUser, loginUser };
